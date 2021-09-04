@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Worker_type extends Model
 {
     use HasFactory;
+
+
+    public function workers()
+    {
+        return $this->hasMany(Worker::class);
+    }
+
+    
 }

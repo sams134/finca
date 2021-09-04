@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Bank_account extends Model
 {
     use HasFactory;
+
+    protected $guarded = ['id'];
+
+    public function owner()
+    {
+        return $this->belongsTo(Owner::class);
+    }
+    
+
 }

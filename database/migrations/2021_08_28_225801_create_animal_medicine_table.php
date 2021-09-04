@@ -15,6 +15,15 @@ class CreateAnimalMedicineTable extends Migration
     {
         Schema::create('animal_medicine', function (Blueprint $table) {
             $table->id();
+            $table->date('date');
+            $table->double('cant')->nullable();
+            $table->string('applied_by')->nullable();
+            $table->string('description')->nullable();
+            $table->unsignedBigInteger('animal_id');
+            $table->foreign('animal_id')->references('id')->on('animals')->onDelete('cascade');
+
+            $table->unsignedBigInteger('medicine_id');
+            $table->foreign('medicine_id')->references('id')->on('medicines')->onDelete('cascade');
             $table->timestamps();
         });
     }

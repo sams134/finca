@@ -12,4 +12,15 @@ class Loan extends Model
     public const LOAN_PAID = 1;
     public const LOAN_UNPAID = 2;
     public const LOAN_GRANTED = 3;
+
+    protected $guarded = [];
+
+    public function worker()
+    {
+        return $this->belongsTo(Worker::class);
+    }
+    public function logs()
+    {
+        return $this->morphMany(Log::class,'logable');
+    }
 }

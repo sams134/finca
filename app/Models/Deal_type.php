@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Deal_type extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function animals()
+    {
+        return $this->hasMany(Animal::class);
+    }
 }

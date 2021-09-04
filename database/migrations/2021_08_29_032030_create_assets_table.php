@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateActivesTable extends Migration
+class CreateAssetsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateActivesTable extends Migration
      */
     public function up()
     {
-        Schema::create('actives', function (Blueprint $table) {
+        Schema::create('assets', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->double('value')->default(0);
@@ -28,6 +28,6 @@ class CreateActivesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('actives');
+        Schema::dropIfExists('assets');
     }
 }

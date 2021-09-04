@@ -19,6 +19,7 @@ class CreatePaddocksTable extends Migration
             $table->integer('extension');
             $table->integer('pasture_quality')->default(5);
             $table->text('description')->nullable();
+            $table->string('location_url')->nullable();
             $table->unsignedBigInteger('farm_id');
             $table->foreign('farm_id')->references('id')->on('farms')->onDelete('cascade');
             $table->timestamps();

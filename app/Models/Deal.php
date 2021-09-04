@@ -16,4 +16,19 @@ class Deal extends Model
 
     public const DEAL_BUY = 1;
     public const DEAL_SELL = 2;
+
+    protected $guarded = [];
+
+    public function animals()
+    {
+        return $this->belongsToMany(Animal::class)->withTimestamps();
+    }
+    public function image()
+    {
+        return $this->morphOne(Image::class,'imageable');
+    }
+    public function logs()
+    {
+        return $this->morphMany(Log::class,'logable');
+    }
 }

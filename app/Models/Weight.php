@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Weight extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    public function animal()
+    {
+        return $this->belongsTo(Animal::class);
+    }
 }

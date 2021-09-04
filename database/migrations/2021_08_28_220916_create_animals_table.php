@@ -16,6 +16,7 @@ class CreateAnimalsTable extends Migration
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
             $table->string('number');
+            $table->tinyInteger('gender');
             $table->double('initial_weight')->nullable();
             $table->double('initial_price')->nullable();
             $table->date('purchased_date');
